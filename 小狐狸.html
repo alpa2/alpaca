@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>奖励领取页面</title>
+  <style>
+    body {
+      background-color: #F9F9F9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    var claimCount = 0;
+    var claimed = false;
+
+    function claimReward() {
+      if (claimed) {
+        alert("抱歉，您已经领取过奖励了！");
+        return;
+      }
+
+      if (claimCount >= 100) {
+        alert("抱歉，奖励已经全部领取完毕！");
+        return;
+      }
+
+      claimCount++;
+      claimed = true;
+      alert("恭喜您，您是第 " + claimCount + " 位领取奖励的用户！");
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>奖励领取页面</h1>
+    <p>只有前100名才能领取奖励！</p>
+    <button class="button" onclick="claimReward()">领取奖励</button>
+  </div>
+</body>
+</html>
+
+
